@@ -128,18 +128,21 @@
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
-              <h3>Project Title</h3>
+              <h3>Birthday Paradox Simulator</h3>
               <p>
-               Motivation of the project
+              The birthday paradox is the idea that you don’t need a huge group of people for two of them to share a birthday. Even though there are 365 possible birthdays, the probability of a match becomes more than 50% once the group size reaches 23. This project explores that result using a simulation.
               </p>
               <p>
-              Functional requirements/what the project does
+              The motivation behind this project was to take a famous probability result and make it tangible by running experiments in code. We can generate random birthdays, repeat the experiment many times, and watch the percentages increase as the number of people grows.
               </p>
               <p>
-              Project design
+              Functionally, the program runs experiments for group sizes from 5 up to 100 (in increments of 5). For each group size, it runs 20 trials and reports the percentage of trials where at least two people share the same birthday. The output is printed as a simple table showing the number of people and the matching-birthday percentage.
               </p>
               <p>
-              Implementation
+              Project design is split into small classes with clear responsibilities. A Birthday object represents one person’s (month, day) birthday, generated randomly but always valid (no February 30th). A Trial represents one “room” of people and stores a list of birthdays. An Experiment runs multiple trials for a fixed group size and computes the overall percentage of duplicate birthdays. Finally, Simulator is the driver that loops through group sizes and prints results.
+              </p>
+              <p>
+              My main contribution was implementing the Trial class. I built the logic that checks whether a trial contains any duplicate birthday by comparing each birthday against the others (month and day). This part is the “detector” for the whole project, every experiment’s final percentage depends on whether each trial correctly identifies a match. I also helped a bit with other parts of the project as we worked through integration and debugging.
               </p>
 
 
